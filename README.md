@@ -3,85 +3,59 @@
 
 [README: English](./README.md)
 
-# Teleport Mod
 
-**Teleport Mod** is a server-side mod for Minecraft that allows players to link two signs and teleport between them. It is designed for use on multiplayer servers and allows administrators to configure and manage teleport links.
+# TeleportBlock Mod
+
+## Overview
+The TeleportBlock Mod is a Fabric Minecraft mod that allows administrators to create teleport links between two blocks using a honeycomb item. Players can be teleported by stepping on one of the linked blocks. Only administrators have permission to create and remove teleport links.
 
 ## Features
-
-- Link two wooden signs using obsidian to create a teleport link.
-- Only administrators with a configurable permission level can configure or destroy links.
-- Players can use linked signs to teleport from one point to another.
-- `/teleportmod reload` command to reload configuration and language files without restarting the server.
-
-## Requirements
-
-- Minecraft 1.21 or later
-- Fabric API
+- Set teleport links between two blocks
+- Only administrators can create and remove teleport links
+- Players will be teleported when stepping on a linked block
+- Supports permissions and configurable language strings
 
 ## Installation
-
-1. Place the mod's `.jar` file in the `mods` folder of the Minecraft server.
-2. Start the server to generate configuration files.
-
-## Configuration
-
-Once the server is started, configuration files will be generated in the `config/teleportmod/` folder:
-
-- **config.json**: Configuration file where you can set the permission level required to create or destroy teleport links.
-- **language.txt**: Language file where you can customize the messages shown to players.
-
-### Configuring `config.json`
-
-The `config.json` file includes a property for the administrator permission level:
-
-```json
-{
-  "permissionLevel": 4
-}
-```
-
-- `permissionLevel`: Specifies the minimum permission level required to create or destroy teleport links. The default permission level is `4` (administrator).
-
-### Configuring `language.txt`
-
-The `language.txt` file allows you to customize the messages players see when using the mod. Here is an example of how it looks:
-
-```vbnet
-sign_a_selected=Sign A selected!
-teleport_link_set=Teleport link set between A and B!
-teleported_to=Teleported to
-no_permission_to_destroy=You don't have permission to destroy this sign!
-error_already_linked=Error: One of the signs is already linked!
-```
-
-You can edit the messages as you wish, maintaining the `key=value` structure.
-
-## How to Use the Mod
-
-![usage](https://raw.githubusercontent.com/nemmusu/teleportmod/refs/heads/main/gif-example/usage.gif)
-
-1. **Create a Teleport Link**:
-   - Equip an obsidian block in the main hand.
-   - Right-click on a wooden sign. This will select the first teleport point.
-   - Right-click on a second wooden sign to link the two points.
-
-2. **Teleport**:
-   - Once the link is created, any player can click on one of the signs to be teleported to the other.
-
-3. **Remove a Teleport Link**:
-   - Administrators can destroy one of the signs to remove the link. Players without the required permission level cannot destroy linked signs.
-
-4. **Reload Configuration**:
-   - Use the `/teleportmod reload` command to reload configuration and language files without restarting the server.
+1. Place the mod JAR file in the `mods` folder of your Minecraft installation directory.
+2. Run the game and the mod will automatically generate the necessary configuration files.
 
 ## Commands
 
-- `/teleportmod reload`: Reload the configuration and language files.
+### `/tport set1 <name>`
+- Use this command after selecting the first block with the honeycomb to set the name of the first block (Block A).
 
-## Notes
+### `/tport set2 <name>`
+- Use this command after selecting the second block with the honeycomb to set the name of the second block (Block B) and complete the teleport link between Block A and Block B.
 
-- Ensure players have the correct permission level to use the mod's administrative features (configurable via `config.json`).
-- Remember to back up the `teleport_links.json` file to preserve created teleport links.
+### `/tport cancel`
+- Cancel the current teleport setup.
+
+### `/tport reload`
+- Reload the teleport links and language configuration files.
+
+### `/tport help`
+- Display help information for using the mod, including steps to set up teleport links.
+
+## Usage
+
+![usage](https://github.com/Cubolico/teleport-block-mod/blob/main/gif-example/usage.gif?raw=true)
+
+1. Select the first block (Block A) by right-clicking on it with the honeycomb.
+2. Run the command `/tport set1 <name>` to set the name for Block A.
+3. Select the second block (Block B) by right-clicking on it with the honeycomb.
+4. Run the command `/tport set2 <name>` to link Block A and Block B.
+5. Once linked, players stepping on one block will be teleported to the other.
+
+## Configuration
+- The mod automatically generates a configuration directory at `config/teleportblock` with two important files:
+  - `teleport_links.json`: Contains the data for teleport links.
+  - `language.txt`: Contains customizable language strings for the mod's messages.
+
+## Permissions
+- Only players with admin-level permissions (level 4) can create and remove teleport links.
+- Non-admin players are prevented from breaking teleport-linked blocks.
+
+## Language Customization
+- You can customize the mod's messages by editing the `language.txt` file. Each line corresponds to a specific message in the mod, and you can modify these to suit your server's language or style.
 
 

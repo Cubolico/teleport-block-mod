@@ -4,88 +4,56 @@
 [README: Italiano](./README_IT.md)
 
 
-# Teleport Mod
+# Mod TeleportBlock
 
-**Teleport Mod** è una mod server side per Minecraft che consente ai giocatori di collegare due segnaletiche e teletrasportarsi tra di esse. È progettata per l'uso su server multiplayer e consente agli amministratori di configurare e gestire i collegamenti di teletrasporto.
+## Panoramica
+La Mod TeleportBlock è una mod di Minecraft per Fabric che permette agli amministratori di creare collegamenti di teletrasporto tra due blocchi utilizzando un oggetto honeycomb. I giocatori possono essere teletrasportati calpestando uno dei blocchi collegati. Solo gli amministratori hanno il permesso di creare e rimuovere collegamenti di teletrasporto.
 
-## Funzionalità
-
-- Collega due segnaletiche di legno utilizzando l'ossidiana per creare un collegamento di teletrasporto.
-- Solo gli amministratori con un livello di permesso configurabile possono configurare o distruggere i collegamenti.
-- I giocatori possono utilizzare i cartelli collegati per teletrasportarsi da un punto all'altro.
-- Comando `/teleportmod reload` per ricaricare la configurazione e il file di lingua senza riavviare il server.
-
-## Requisiti
-
-- Minecraft 1.21 o superiori
-- Fabric API
+## Caratteristiche
+- Imposta collegamenti di teletrasporto tra due blocchi
+- Solo gli amministratori possono creare e rimuovere collegamenti di teletrasporto
+- I giocatori verranno teletrasportati quando calpesteranno un blocco collegato
+- Supporta i permessi e le stringhe di linguaggio configurabili
 
 ## Installazione
-
-1. Posiziona il file `.jar` della mod nella cartella `mods` del server Minecraft.
-2. Avvia il server per generare i file di configurazione.
-
-## Configurazione
-
-Una volta avviato il server, verranno generati i file di configurazione nella cartella `config/teleportmod/`:
-
-- **config.json**: File di configurazione dove puoi impostare il livello di permesso necessario per creare o distruggere collegamenti di teletrasporto.
-- **language.txt**: File di lingua dove puoi personalizzare i messaggi mostrati ai giocatori.
-
-### Configurazione `config.json`
-
-Il file `config.json` include una proprietà per il livello di permesso degli amministratori:
-
-```json
-{
-  "permissionLevel": 4
-}
-```
-
-- `permissionLevel`: Specifica il livello minimo di permesso richiesto per creare o distruggere collegamenti di teletrasporto. Il livello di permesso di default è `4` (amministratore).
-
-### Configurazione `language.txt`
-
-Il file `language.txt` consente di personalizzare i messaggi che i giocatori vedono durante l'utilizzo della mod. Ecco un esempio di come appare:
-
-```vbnet
-sign_a_selected=Cartello A selezionato!
-teleport_link_set=Collegamento di teletrasporto creato tra A e B!
-teleported_to=Teletrasportato a
-no_permission_to_destroy=Non hai il permesso per distruggere questo cartello!
-error_already_linked=Errore: Uno dei cartelli è già collegato!
-```
-
-Puoi modificare i messaggi a tuo piacimento, mantenendo la struttura `chiave=valore`.
-
-## Come Usare la Mod
-
-![usage](https://raw.githubusercontent.com/nemmusu/teleportmod/refs/heads/main/gif-example/usage.gif)
-
-1. **Creare un collegamento di teletrasporto**:
-   - Equipaggia un blocco di ossidiana nella mano principale.
-   - Fai clic destro su una segnaletica di legno. Questo selezionerà il primo punto di teletrasporto.
-   - Fai clic destro su una seconda segnaletica di legno per collegare i due punti.
-
-2. **Teletrasportarsi**:
-   - Una volta creato il collegamento, qualsiasi giocatore può cliccare su una delle segnaletiche per essere teletrasportato all'altra.
-
-3. **Rimuovere un collegamento di teletrasporto**:
-   - Gli amministratori possono distruggere una delle segnaletiche per rimuovere il collegamento. I giocatori senza il livello di permesso richiesto non possono distruggere i cartelli collegati.
-
-4. **Ricaricare la configurazione**:
-   - Usa il comando `/teleportmod reload` per ricaricare i file di configurazione e lingua senza dover riavviare il server.
+1. Posiziona il file JAR della mod nella cartella `mods` della tua directory di installazione di Minecraft.
+2. Avvia il gioco e la mod genererà automaticamente i file di configurazione necessari.
 
 ## Comandi
 
-- `/teleportmod reload`: Ricarica il file di configurazione e il file di lingua.
+### `/tport set1 <nome>`
+- Usa questo comando dopo aver selezionato il primo blocco con l'honeycomb per impostare il nome del primo blocco (Blocco A).
 
-## Note
+### `/tport set2 <nome>`
+- Usa questo comando dopo aver selezionato il secondo blocco con l'honeycomb per impostare il nome del secondo blocco (Blocco B) e completare il collegamento di teletrasporto tra Blocco A e Blocco B.
 
-- Assicurati che i giocatori abbiano il livello di permesso corretto per utilizzare le funzionalità amministrative della mod (configurabile tramite `config.json`).
-- Non dimenticare di fare backup del file `teleport_links.json` per preservare i collegamenti di teletrasporto creati.
+### `/tport cancel`
+- Annulla l'impostazione del teletrasporto corrente.
 
+### `/tport reload`
+- Ricarica i collegamenti di teletrasporto e i file di configurazione del linguaggio.
 
+### `/tport help`
+- Mostra informazioni di aiuto sull'utilizzo della mod, inclusi i passaggi per impostare i collegamenti di teletrasporto.
 
+## Utilizzo
 
+![utilizzo](https://github.com/Cubolico/teleport-block-mod/blob/main/gif-example/usage.gif?raw=true)
 
+1. Seleziona il primo blocco (Blocco A) facendo clic destro su di esso con l'honeycomb.
+2. Esegui il comando `/tport set1 <nome>` per impostare il nome per il Blocco A.
+3. Seleziona il secondo blocco (Blocco B) facendo clic destro su di esso con l'honeycomb.
+4. Esegui il comando `/tport set2 <nome>` per collegare Blocco A e Blocco B.
+5. Una volta collegati, i giocatori che calpesteranno un blocco saranno teletrasportati all'altro.
+
+## Configurazione
+- La mod genera automaticamente una directory di configurazione in `config/teleportblock` con due file importanti:
+  - `teleport_links.json`: Contiene i dati dei collegamenti di teletrasporto.
+  - `language.txt`: Contiene stringhe di linguaggio personalizzabili per i messaggi della mod.
+
+## Permessi
+- Solo i giocatori con permessi di livello admin (livello 4) possono creare e rimuovere collegamenti di teletrasporto.
+- I giocatori non amministratori non possono rompere i blocchi collegati al teletrasporto.
+
+## Personalizzazione del Linguaggio
+- Puoi personalizzare i messaggi della mod modificando il file `language.txt`. Ogni riga corrisponde a un messaggio specifico nella mod, e puoi modificarli per adattarli alla lingua o allo stile del tuo server.

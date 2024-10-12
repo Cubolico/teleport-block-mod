@@ -33,7 +33,7 @@ La Mod TeleportBlock è una mod di Minecraft per Fabric che permette agli ammini
 ### `/tport reload`
 - Ricarica i collegamenti di teletrasporto e i file di configurazione del linguaggio.
 
-### `/tport help`
+### `/tport usage`
 - Mostra informazioni di aiuto sull'utilizzo della mod, inclusi i passaggi per impostare i collegamenti di teletrasporto.
 
 ## Utilizzo

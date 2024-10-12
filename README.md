@@ -33,7 +33,7 @@ The TeleportBlock Mod is a Fabric Minecraft mod that allows administrators to cr
 ### `/tport reload`
 - Reload the teleport links and language configuration files.
 
-### `/tport help`
+### `/tport usage`
 - Display help information for using the mod, including steps to set up teleport links.
 
 ## Usage

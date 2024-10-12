@@ -38,7 +38,7 @@ The TeleportBlock Mod is a Fabric Minecraft mod that allows administrators to cr
 
 ## Usage
 
-![usage](https://github.com/Cubolico/teleport-block-mod/blob/main/gif-example/usage.gif?raw=true)
+![usage](https://raw.githubusercontent.com/Cubolico/teleport-block-mod/refs/heads/main/gif-example/usage.gif)
 
 1. Select the first block (Block A) by right-clicking on it with the honeycomb.
 2. Run the command `/tport set1 <name>` to set the name for Block A.

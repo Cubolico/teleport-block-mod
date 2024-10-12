@@ -38,7 +38,7 @@ La Mod TeleportBlock è una mod di Minecraft per Fabric che permette agli ammini
 
 ## Utilizzo
 
-![utilizzo](https://github.com/Cubolico/teleport-block-mod/blob/main/gif-example/usage.gif?raw=true)
+![utilizzo](https://raw.githubusercontent.com/Cubolico/teleport-block-mod/refs/heads/main/gif-example/usage.gif)
 
 1. Seleziona il primo blocco (Blocco A) facendo clic destro su di esso con l'honeycomb.
 2. Esegui il comando `/tport set1 <nome>` per impostare il nome per il Blocco A.

@@ -45,6 +45,7 @@ The TeleportBlock Mod is a Fabric Minecraft mod that allows administrators to cr
 3. Select the second block (Block B) by right-clicking on it with the honeycomb.
 4. Run the command `/tport set2 <name>` to link Block A and Block B.
 5. Once linked, players stepping on one block will be teleported to the other.
+6. Destroying either of the two blocks will remove the link.
 
 ## Configuration
 - The mod automatically generates a configuration directory at `config/teleportblock` with two important files:

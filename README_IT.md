@@ -45,6 +45,7 @@ La Mod TeleportBlock è una mod di Minecraft per Fabric che permette agli ammini
 3. Seleziona il secondo blocco (Blocco B) facendo clic destro su di esso con l'honeycomb.
 4. Esegui il comando `/tport set2 <nome>` per collegare Blocco A e Blocco B.
 5. Una volta collegati, i giocatori che calpesteranno un blocco saranno teletrasportati all'altro.
+6. Distruggendo uno dei due blocchi il collegamento verrà eliminato
 
 ## Configurazione
 - La mod genera automaticamente una directory di configurazione in `config/teleportblock` con due file importanti:
